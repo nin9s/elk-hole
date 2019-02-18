@@ -16,7 +16,7 @@ please note, this is still work in progress, so please let me know if I've left 
 3. kibana
 4. filebeat on pi-hole
 
--> working installation of the elk stack - refer to https://www.elastic.co/ for details.
+-> installation of the elk stack - refer to https://www.elastic.co/ for details.
 
 
 this repo provides the relevant files and configuration for sending the pi-hole logs via filebeat directly to logstash/elasticsearch. We will then visualize the logs in kibana with a custom dashboard.
