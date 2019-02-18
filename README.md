@@ -11,10 +11,10 @@ please note, this is still work in progress, so please let me know if I've left 
 
 ### requirements:
 ## working installation of:
-logstash
-elasticsearch
-kibana
-filebeat on pi-hole
+1. logstash
+2. elasticsearch
+3. kibana
+4. filebeat on pi-hole
 
 -> working installation of the elk stack - refer to https://www.elastic.co/ for details.
 
