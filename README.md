@@ -6,9 +6,14 @@
 
 requirements:
 
-working installation of the elk stack - refer to https://www.elastic.co/ for details.
+logstash
+elasticsearch
+kibana
 
-this repo provides the relevant files for getting the pi-hole logs via filebeat directly to logstash, sending them to elasticsearch and finally visualize it in kibana
+-> working installation of the elk stack - refer to https://www.elastic.co/ for details.
+
+
+this repo provides the relevant files and configuration for sending the pi-hole logs via filebeat directly to logstash/elasticsearch. We will then visualize the logs in kibana with a custom dashboard.
 
 The result will look like this:
 
