@@ -7,8 +7,7 @@
 
 please note, this is still work in progress, so please let me know if I've left anything unclear/incorrect which definitely could be the case!
 
-requirements:
-
+### requirements:
 logstash
 elasticsearch
 kibana
@@ -27,14 +26,14 @@ The result will look like this:
  
 ### LOGSTASH HOST 
 1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually /etc/logstash)
-1.1 customize "<ELASTICSEARCHHOST:PORT>" in the output section at the bottom of the file
+1.1. customize "<ELASTICSEARCHHOST:PORT>" in the output section at the bottom of the file
 2.copy "dns" to "/etc/logstash/patterns/"
 3. restart logstash
 
 ### PI-HOLE
 4. copy "/etc/filebeat/filebeat.yml" to your filebeat installation at the pi-hole instance
-4.1 customize "<LOGSTASHHOST>:5141"]" to match your logstash hostname/ip
-5 restart filebeat
+4.1. customize "<LOGSTASHHOST>:5141"]" to match your logstash hostname/ip
+5. restart filebeat
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELK)
 import "elk-hole.json" into kibana: management - saved objects - import
