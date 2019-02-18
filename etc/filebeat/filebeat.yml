@@ -1,0 +1,18 @@
+filebeat:
+ prospectors:
+   -
+     paths:
+        - /var/log/pihole.log
+     input_type: log
+ registry_file: /var/lib/filebeat/registry
+ 
+output:
+ logstash:
+   hosts: ["<LOGSTASHHOST>:5141"]
+   
+shipper:
+   
+logging:
+ files:
+   rotateeverybytes: 10485760 
+ 
