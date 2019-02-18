@@ -39,7 +39,7 @@ The result will look like this:
 7. restart filebeat
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELK)
-import "elk-hole.json" into kibana: management - saved objects - import
+8. import "elk-hole.json" into kibana: management - saved objects - import
 
 
 
