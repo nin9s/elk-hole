@@ -5,11 +5,14 @@
 ### show, search, filter and customize pi-hole statistics ... the elk way
 ### a huge "thank you" to [skaldenhoven](https://discourse.pi-hole.net/u/skaldenhoven/summary) who contributed quiet some nice details to the configuration and parsing logic as well as troubleshooting and testing!
 
+please note, this is still work in progress, so please let me know if I've left anything unclear/incorrect which definitely could be the case!
+
 requirements:
 
 logstash
 elasticsearch
 kibana
+filebeat on pi-hole
 
 -> working installation of the elk stack - refer to https://www.elastic.co/ for details.
 
@@ -22,3 +25,19 @@ The result will look like this:
   
 # HOW TO USE 
  
+### LOGSTASH HOST 
+1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually /etc/logstash)
+1.1 customize "<ELASTICSEARCHHOST:PORT>" in the output section at the bottom of the file
+2.copy "dns" to "/etc/logstash/patterns/"
+3. restart logstash
+
+### PI-HOLE
+4. copy "/etc/filebeat/filebeat.yml" to your filebeat installation at the pi-hole instance
+4.1 customize "<LOGSTASHHOST>:5141"]" to match your logstash hostname/ip
+5 restart filebeat
+
+### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELK)
+import "elk-hole.json" into kibana: management - saved objects - import
+
+You should then be able to see your new dashboard and visualizations.
+
