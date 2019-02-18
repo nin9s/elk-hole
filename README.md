@@ -5,9 +5,12 @@
 ### show, search, filter and customize pi-hole statistics ... the elk way
 ### a huge "thank you" to [skaldenhoven](https://discourse.pi-hole.net/u/skaldenhoven/summary) who contributed quiet some nice details to the configuration and parsing logic as well as troubleshooting and testing!
 
+
+
 please note, this is still work in progress, so please let me know if I've left anything unclear/incorrect which definitely could be the case!
 
 ### requirements:
+## working installation of:
 logstash
 elasticsearch
 kibana
