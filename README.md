@@ -26,17 +26,19 @@ The result will look like this:
  
 ### LOGSTASH HOST 
 1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually /etc/logstash)
-2. customize "<ELASTICSEARCHHOST:PORT>" in the output section at the bottom of the file
-3.copy "dns" to "/etc/logstash/patterns/"
+2. customize "ELASTICSEARCHHOST:PORT" in the output section at the bottom of the file
+3. copy "dns" to "/etc/logstash/patterns/"
 4. restart logstash
 
 ### PI-HOLE
 5. copy "/etc/filebeat/filebeat.yml" to your filebeat installation at the pi-hole instance
-6. customize "<LOGSTASHHOST>:5141"]" to match your logstash hostname/ip
+6. customize "LOGSTASHHOST:5141" to match your logstash hostname/ip
 7. restart filebeat
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELK)
 import "elk-hole.json" into kibana: management - saved objects - import
+
+
 
 You should then be able to see your new dashboard and visualizations.
 
