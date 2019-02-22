@@ -11,10 +11,10 @@ please note, this is still work in progress, so please let me know if I've left 
 
 ### requirements:
 ## working installation of:
-1. logstash
-2. elasticsearch
-3. kibana
-4. filebeat on pi-hole
+1. logstash (tested with "6.5.0")
+2. elasticsearch (tested with "6.5.0")
+3. kibana (tested with "6.5.0")
+4. filebeat on pi-hole (tested with "1.3.1")
 
 -> installation of the elk stack - refer to https://wiki.kaldenhoven.org/display/LIN/Elastic+Stack+on+Ubuntu+16.04+with+AdoptOpenJDK or https://www.elastic.co/ for details.
 
