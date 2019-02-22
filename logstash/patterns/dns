@@ -1,0 +1,5 @@
+HOSTNAMEPTR \b(?:[\._0-9A-Za-z][0-9A-Za-z-]{0,62})(?:\.(?:[\._0-9A-Za-z][0-9A-Za-z-]{0,62}))*(\.?|\b)
+NODATA NODATA-[[:word:]]+
+SRV _+.+\S
+FQDN \b(?:[\w-][\w-]{0,62})(?:\.(?:[\w-][\w-]{0,62}))*(\.?|\b)
+DNSMASQPREFIX %{SYSLOGTIMESTAMP:date} %{SYSLOGPROG}: %{INT:logrow} %{IP:source_host}\/%{POSINT:source_port}
