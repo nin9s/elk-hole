@@ -3,6 +3,8 @@ filebeat:
    -
      paths:
         - /var/log/pihole.log
+     
+     # filebeat 6.6.0 above: change input_type to type
      input_type: log
  registry_file: /var/lib/filebeat/registry
  
