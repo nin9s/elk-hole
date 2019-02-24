@@ -41,7 +41,7 @@ The result will look like this:
 9. copy 99-pihole-log-facility.conf to /etc/dnsmasq.d/
 11. restart pi-hole
 
-### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELK)
+### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 12. import "elk-hole.json" into kibana: management - saved objects - import
 
 
