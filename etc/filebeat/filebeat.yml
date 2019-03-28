@@ -10,7 +10,8 @@ filebeat:
  
 output:
  logstash:
-   hosts: ["<LOGSTASHHOST>:5141"]
+   # LOGSTASHHOST:5141
+   hosts: ["127.0.0.1:5141"]
    
 shipper:
    
