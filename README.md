@@ -3,7 +3,6 @@
 ## elasticsearch, logstash and kibana configuration for pi-hole visualization
 
 ### show, search, filter and customize pi-hole statistics ... the elk way
-### a huge "thank you" to [skaldenhoven](https://github.com/skaldenhoven) who contributed quiet some nice details to the configuration and parsing logic as well as troubleshooting and testing!
 
 
 
@@ -43,6 +42,10 @@ The result will look like this:
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 12. import "elk-hole.json" into kibana: management - saved objects - import
+
+
+
+# a huge "thank you" to [skaldenhoven](https://github.com/skaldenhoven) who contributed quiet some nice details to the configuration and parsing logic as well as troubleshooting and testing!
 
 
 
