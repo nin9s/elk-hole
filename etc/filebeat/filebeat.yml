@@ -17,5 +17,4 @@ shipper:
    
 logging:
  files:
-   rotateeverybytes: 10485760 
- 
+   rotateeverybytes: 10485760
