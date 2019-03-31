@@ -42,7 +42,7 @@ The result will look like this:
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 12. import "elk-hole.json" into kibana: management - saved objects - import
-
+13. optionally reload kibanas field list
 
 
 You should then be able to see your new dashboard and visualizations.
