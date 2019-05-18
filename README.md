@@ -5,9 +5,6 @@
 ### show, search, filter and customize pi-hole statistics ... the elk way
 
 
-
-please note, this is still work in progress, so please let me know if I've left anything unclear/incorrect which definitely could be the case!
-
 ### requirements:
 ## working installation of:
 1. logstash (tested with "6.5.0")
