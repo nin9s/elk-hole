@@ -2,6 +2,8 @@
 
 ## elasticsearch, logstash and kibana configuration for pi-hole visualization
 
+elk-hole provides the relevant files and configuration to easily visualize pi-holes/dnsmasq statistics via the popular elasticstack.
+
 ### show, search, filter and customize pi-hole statistics ... the elk way
 
 
