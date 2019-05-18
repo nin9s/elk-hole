@@ -1,3 +1,7 @@
+# created by n9nes												#
+# feel free to star the rep - https://github.com/nin9s/elk-hole	#
+#################################################################
+
 filebeat:
  prospectors:
    -
