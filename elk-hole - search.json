@@ -1,0 +1,46 @@
+[
+  {
+    "_id": "ff6d07c0-3588-11e8-beb4-d7353bd14360",
+    "_type": "search",
+    "_source": {
+      "title": "piholed",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "tags",
+        "domain_request",
+        "ip_request",
+        "source_host",
+        "blocked_domain"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"55140490-2411-11e9-8e51-330d470c740b\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"language\": \"lucene\",\n    \"query\": \"\"\n  },\n  \"filter\": [\n    {\n      \"meta\": {\n        \"negate\": false,\n        \"index\": \"55140490-2411-11e9-8e51-330d470c740b\",\n        \"type\": \"phrase\",\n        \"key\": \"tags\",\n        \"value\": \"piholed\",\n        \"params\": {\n          \"query\": \"piholed\",\n          \"type\": \"phrase\"\n        },\n        \"disabled\": false,\n        \"alias\": null\n      },\n      \"query\": {\n        \"match\": {\n          \"tags\": {\n            \"query\": \"piholed\",\n            \"type\": \"phrase\"\n          }\n        }\n      },\n      \"$state\": {\n        \"store\": \"globalState\"\n      }\n    }\n  ]\n}"
+      }
+    }
+  },
+  {
+    "_id": "0c46c820-6d99-11e9-b607-6710a00e4c3e",
+    "_type": "search",
+    "_source": {
+      "title": "pihole wildcard ",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"55140490-2411-11e9-8e51-330d470c740b\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"query\":{\"wildcard\":{\"source_host\":\"\"}},\"meta\":{\"negate\":false,\"index\":\"55140490-2411-11e9-8e51-330d470c740b\",\"disabled\":false,\"alias\":null,\"type\":\"custom\",\"key\":\"query\",\"value\":\"{\\\"wildcard\\\":{\\\"source_host\\\":\\\"\\\"}}\"},\"$state\":{\"store\":\"globalState\"}}]}"
+      }
+    }
+  }
+]
