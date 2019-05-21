@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "e611adc0-a203-11e8-8e9e-1d0e979ee6d4",
+    "_type": "visualization",
+    "_source": {
+      "title": "piholed percent - pihole",
+      "visState": "{\"title\":\"piholed percent - pihole\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"gauge\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"filter_ratio\",\"numerator\":\"tags:\\\"piholed\\\"\",\"denominator\":\"tags.keyword:\\\"request and query type\\\"\",\"metric_agg\":\"count\"},{\"sigma\":\"\",\"id\":\"ef9f03c0-7c04-11e9-b96e-8bf05a5f3904\",\"type\":\"avg_bucket\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"percent\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"value_template\":\"\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"*dns*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"gauge_color_rules\":[{\"id\":\"14b76370-a201-11e8-a2be-75195e55158c\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\",\"bar_color_rules\":[{\"id\":\"c116e410-a201-11e8-a2be-75195e55158c\"}],\"background_color_rules\":[{\"id\":\"6fa17de0-a209-11e8-a2be-75195e55158c\"}],\"annotations\":[],\"axis_scale\":\"normal\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    }
+  }
+]
