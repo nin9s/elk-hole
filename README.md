@@ -40,7 +40,7 @@ The result will look like this:
 11. restart pi-hole
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
-12. import "elk-hole.json" into kibana: management - saved objects - import
+12. import "elk-hole *.json" into kibana: management - saved objects - import
 13. optionally reload kibanas field list
 
 
