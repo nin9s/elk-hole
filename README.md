@@ -14,7 +14,7 @@ elk-hole provides the relevant files and configuration to easily visualize pi-ho
 3. kibana (tested with "6.5.0")
 4. filebeat on pi-hole (tested with "1.3.1")
 
--> installation of the elk stack - refer to https://wiki.kaldenhoven.org/display/LIN/Elastic+Stack+on+Ubuntu+16.04+with+AdoptOpenJDK or https://www.elastic.co/ for details.
+-> installation of the elk stack - refer to https://www.elastic.co/ for details.
 
 
 this repo provides the relevant files and configuration for sending the pi-hole logs via filebeat directly to logstash/elasticsearch. We will then visualize the logs in kibana with a custom dashboard.
