@@ -9,9 +9,9 @@ elk-hole provides the relevant files and configuration to easily visualize pi-ho
 
 ### requirements:
 ## working installation of:
-1. logstash (tested with "6.5.0")
-2. elasticsearch (tested with "6.5.0")
-3. kibana (tested with "6.5.0")
+1. logstash (currently tested up to verion "7.1.0")
+2. elasticsearch (currently tested up to verion with "7.1.0")
+3. kibana (currently tested up to verion "7.1.0")
 4. filebeat on pi-hole (tested with "1.3.1")
 
 -> installation of the elk stack - refer to https://www.elastic.co/ for details.
