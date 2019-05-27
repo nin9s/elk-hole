@@ -18,7 +18,7 @@ output:
    hosts: ["127.0.0.1:5141"]
    
 shipper:
-   
+  name: elk-hole
 logging:
  files:
    rotateeverybytes: 10485760
