@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "fb953870-339e-11e8-beb4-d7353bd14360",
+    "_type": "dashboard",
+    "_source": {
+      "title": "DNS - pihole",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}},\"gridData\":{\"h\":14,\"i\":\"1\",\"w\":14,\"x\":0,\"y\":39},\"id\":\"27624920-3390-11e8-beb4-d7353bd14360\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"h\":14,\"i\":\"2\",\"w\":12,\"x\":24,\"y\":39},\"id\":\"c60b2a70-339e-11e8-beb4-d7353bd14360\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"h\":16,\"i\":\"3\",\"w\":20,\"x\":0,\"y\":23},\"id\":\"88d55340-338c-11e8-beb4-d7353bd14360\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"gridData\":{\"h\":16,\"i\":\"4\",\"w\":9,\"x\":20,\"y\":23},\"id\":\"076c70c0-338e-11e8-beb4-d7353bd14360\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"gridData\":{\"h\":23,\"i\":\"6\",\"w\":29,\"x\":0,\"y\":0},\"id\":\"381275b0-34bc-11e8-beb4-d7353bd14360\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"gridData\":{\"h\":6,\"i\":\"7\",\"w\":5,\"x\":19,\"y\":47},\"id\":\"e7da3480-34f1-11e8-beb4-d7353bd14360\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"gridData\":{\"h\":6,\"i\":\"8\",\"w\":5,\"x\":14,\"y\":47},\"id\":\"bd5cd320-34f1-11e8-beb4-d7353bd14360\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"gridData\":{\"h\":16,\"i\":\"9\",\"w\":10,\"x\":29,\"y\":23},\"id\":\"8c6a0b10-34f2-11e8-beb4-d7353bd14360\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"h\":14,\"i\":\"10\",\"w\":12,\"x\":36,\"y\":39},\"id\":\"91cada30-5e82-11e8-81db-f1525a738f45\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":8,\"i\":\"11\",\"w\":10,\"x\":14,\"y\":39},\"id\":\"e611adc0-a203-11e8-8e9e-1d0e979ee6d4\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.3.2\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":16,\"i\":\"12\",\"w\":9,\"x\":39,\"y\":23},\"id\":\"25c8a840-27b2-11e9-8e51-330d470c740b\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.5.0\"},{\"embeddableConfig\":{\"mapCenter\":[30.44867367928756,-2.6367187500000004],\"mapZoom\":2},\"gridData\":{\"h\":23,\"i\":\"13\",\"w\":19,\"x\":29,\"y\":0},\"id\":\"0858a2c0-643d-11e9-b607-6710a00e4c3e\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.5.0\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
