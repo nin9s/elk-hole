@@ -12,7 +12,7 @@ elk-hole provides the relevant files and configuration to easily visualize pi-ho
 1. logstash (currently tested up to version "7.1.0")
 2. elasticsearch (currently tested up to version with "7.1.0")
 3. kibana (currently tested up to version "7.1.0")
-4. filebeat on pi-hole (tested with "1.3.1")
+4. filebeat on pi-hole (tested with "1.3.1" & "7.1.0")
 
 -> installation of the elk stack - refer to https://www.elastic.co/ for details.
 
