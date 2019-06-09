@@ -41,7 +41,9 @@ The result will look like this:
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 12. import suitable "json/elk-hole *.json" for your version into kibana: management - saved objects - import
-13. optionally reload kibanas field list
+13. delete any existing template matching our index name: DELETE /_template/logstash-syslog-dns*
+14. import the template: paste the content of "logstash-syslog-dns-index.template_ELK7.x.json" into kibanas dev tools console
+15. optionally reload kibanas field list
 
 
 You should then be able to see your new dashboard and visualizations.
