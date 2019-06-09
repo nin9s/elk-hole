@@ -102,6 +102,24 @@
     ]
   },
   {
+    "_id": "381275b0-34bc-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "Requests vs piholed - pihole",
+      "visState": "{\"title\":\"Requests vs piholed - pihole\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"b0e4bf30-34bb-11e8-806f-b37e16272205\",\"color\":\"rgba(255,0,0,1)\",\"split_mode\":\"filter\",\"metrics\":[{\"id\":\"b0e4bf31-34bb-11e8-806f-b37e16272205\",\"type\":\"count\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"3\",\"point_size\":\"0\",\"fill\":\"1\",\"stacked\":\"none\",\"terms_field\":\"tags.keyword\",\"split_filters\":[{\"filter\":\"test\",\"label\":\"test 1\",\"color\":\"#68BC00\",\"id\":\"035358d0-34bc-11e8-806f-b37e16272205\"}],\"terms_order_by\":\"_count\",\"label\":\"Piholed Count\",\"filter\":\"tags:\\\"piholed\\\"\",\"steps\":0,\"split_color_mode\":\"gradient\"},{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"filter\",\"metrics\":[{\"id\":\"a5cd5cd0-34be-11e8-a36f-6fd9911e50af\",\"type\":\"count\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"3\",\"point_size\":\"0\",\"fill\":\"0.5\",\"stacked\":\"none\",\"terms_field\":\"query_type.keyword\",\"terms_order_by\":\"_count\",\"terms_size\":\"10\",\"filter\":\"tags:\\\"request and query type\\\"\",\"override_index_pattern\":0,\"split_color_mode\":\"gradient\",\"label\":\"Request Count\",\"offset_time\":\"\",\"series_drop_last_bucket\":1}],\"time_field\":\"@timestamp\",\"index_pattern\":\"*dns*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"background_color_rules\":[{\"id\":\"76bd8260-34bb-11e8-806f-b37e16272205\"}],\"bar_color_rules\":[{\"id\":\"7892dea0-34bb-11e8-806f-b37e16272205\"}],\"gauge_color_rules\":[{\"id\":\"79668250-34bb-11e8-806f-b37e16272205\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\",\"annotations\":[{\"fields\":\"\",\"template\":\"\",\"index_pattern\":\"\",\"query_string\":\"\",\"id\":\"b09dc6f0-34c2-11e8-a36f-6fd9911e50af\",\"color\":\"#F00\",\"time_field\":\"@timestamp\",\"icon\":\"fa-tag\",\"ignore_global_filters\":1,\"ignore_panel_filters\":1}],\"ignore_global_filter\":0,\"axis_scale\":\"normal\",\"legend_position\":\"bottom\",\"background_color\":\"rgba(255,255,255,1)\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": []
+  },
+  {
     "_id": "0858a2c0-643d-11e9-b607-6710a00e4c3e",
     "_type": "visualization",
     "_source": {
@@ -124,6 +142,24 @@
         "id": "55140490-2411-11e9-8e51-330d470c740b"
       }
     ]
+  },
+  {
+    "_id": "e611adc0-a203-11e8-8e9e-1d0e979ee6d4",
+    "_type": "visualization",
+    "_source": {
+      "title": "piholed percent - pihole",
+      "visState": "{\"title\":\"piholed percent - pihole\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"gauge\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"filter_ratio\",\"numerator\":\"tags:\\\"piholed\\\"\",\"denominator\":\"tags:\\\"request and query type\\\"\",\"metric_agg\":\"count\"},{\"sigma\":\"\",\"id\":\"ef9f03c0-7c04-11e9-b96e-8bf05a5f3904\",\"type\":\"avg_bucket\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"percent\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"value_template\":\"\",\"filter\":\"\",\"split_filters\":[{\"filter\":\"\",\"label\":\"_exists_: source\\\\* _exists_: blocked\\\\*\",\"color\":\"#68BC00\",\"id\":\"a1999690-7c86-11e9-858f-63d26332fe87\"}],\"label\":\"\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"*dns*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"gauge_color_rules\":[{\"id\":\"14b76370-a201-11e8-a2be-75195e55158c\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\",\"bar_color_rules\":[{\"id\":\"c116e410-a201-11e8-a2be-75195e55158c\"}],\"background_color_rules\":[{\"id\":\"6fa17de0-a209-11e8-a2be-75195e55158c\"}],\"annotations\":[],\"axis_scale\":\"normal\",\"default_index_pattern\":\"elastiflow-*\",\"gauge_max\":\"1\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": []
   },
   {
     "_id": "88d55340-338c-11e8-beb4-d7353bd14360",
