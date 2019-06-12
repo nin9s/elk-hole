@@ -1,59 +1,60 @@
-{  
-   "index_patterns":[  
-      "logstash-syslog-dns*"
-   ],
-   "mappings":{  
-      "dynamic":"true",
-      "properties":{  
-         "source_host":{  
-            "type":"ip"
-         },
-         "logrow":{  
-            "type":"integer"
-         },
-         "request_from":{  
-            "type":"ip"
-         },
-         "source_port":{  
-            "type":"integer"
-         },
-         "ip_request":{  
-            "type":"ip"
-         },
-         "ip_response":{  
-            "type":"ip"
-         },
-         "dns_forward_to":{  
-            "type":"ip",
-            "fields":{  
-               "keyword":{  
-                  "type":"keyword",
-                  "ignore_above":256
-               }
-            }
-         },
-         "tags":{  
-            "type":"keyword",
-            "fields":{  
-               "keyword":{  
-                  "type":"keyword",
-                  "ignore_above":256
-               }
-            }
-         },
-         "pid":{  
-            "type":"integer"
-         },
-         "pihole":{  
-            "type":"ip"
-         },
-         "blocked_domain":{  
-            "type":"text"
-         },
-         "date":{  
-            "type":"date",
-            "format":"MMM  d HH:mm:ss||MMM dd HH:mm:ss"
-         }
+PUT /_template/logstash-syslog-dns
+{
+  "index_patterns": [
+    "logstash-syslog-dns*"
+  ],
+  "mappings": {
+    "dynamic": "true",
+    "properties": {
+      "source_host": {
+        "type": "ip"
+      },
+      "logrow": {
+        "type": "integer"
+      },
+      "request_from": {
+        "type": "ip"
+      },
+      "source_port": {
+        "type": "integer"
+      },
+      "ip_request": {
+        "type": "ip"
+      },
+      "ip_response": {
+        "type": "ip"
+      },
+      "dns_forward_to": {
+        "type": "ip",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "tags": {
+        "type": "keyword",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "pid": {
+        "type": "integer"
+      },
+      "pihole": {
+        "type": "ip"
+      },
+      "blocked_domain": {
+        "type": "text"
+      },
+      "date": {
+        "type": "date",
+        "format": "MMM  d HH:mm:ss||MMM dd HH:mm:ss"
       }
-   }
+    }
+  }
 }
