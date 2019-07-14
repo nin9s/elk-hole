@@ -47,8 +47,3 @@ The result will look like this:
 
 
 You should then be able to see your new dashboard and visualizations.
-
-
-
-
-credits to [skaldenhoven](https://github.com/skaldenhoven) who contributed quiet some nice details to the configuration and parsing logic as well as troubleshooting and testing!
