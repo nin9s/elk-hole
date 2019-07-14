@@ -27,7 +27,7 @@ The result will look like this:
 # HOW TO USE 
  
 ### LOGSTASH HOST 
-1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually /etc/logstash)
+1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually /etc/logstash/)
 2. customize "ELASTICSEARCHHOST:PORT" in the output section at the bottom of the file
 3. copy "dns" to "/etc/logstash/patterns/"
 4. restart logstash
