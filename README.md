@@ -22,7 +22,8 @@ this repo provides the relevant files and configuration for sending the pi-hole 
 The result will look like this:
 
 ![alt text](https://github.com/nin9s/elk-hole/blob/master/dash.PNG)
-
+#### alternative:
+![alt text](https://github.com/nin9s/elk-hole/blob/master/dash_enhanced.PNG)
   
 # HOW TO USE 
  
