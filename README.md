@@ -38,7 +38,7 @@ The result will look like this:
 6. customize "LOGSTASHHOST:5141" to match your logstash hostname/ip
 7. restart filebeat
 9. copy 99-pihole-log-facility.conf to /etc/dnsmasq.d/
-11. restart pi-hole
+11. restart pi-hole and ensure filebeat is sending logs to logstash before continuing
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 12. import suitable "json/elk-hole *.json" for your version into kibana: management - saved objects - import
