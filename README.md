@@ -29,6 +29,14 @@ The result will look like this:
  
 ### LOGSTASH HOST 
 1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually /etc/logstash/)
+1.1 if you have other files in this folder make sure to properly edit the input/output/filter sections to avoid matching our filebeat dns logs in these files which may be processed earlier. For testing purposes you can name your conf files like so:
+
+/conf.d/20-dns-syslog.conf
+/conf.d/30-other1.conf
+/conf.d/40-other2.conf
+
+This makes sure that /conf.d/20-dns-syslog.conf is beeing processed at the beginning.
+
 2. customize "ELASTICSEARCHHOST:PORT" in the output section at the bottom of the file
 3. copy "dns" to "/etc/logstash/patterns/"
 4. restart logstash
@@ -38,13 +46,21 @@ The result will look like this:
 6. customize "LOGSTASHHOST:5141" to match your logstash hostname/ip
 7. restart filebeat
 9. copy 99-pihole-log-facility.conf to /etc/dnsmasq.d/
-11. restart pi-hole and ensure filebeat is sending logs to logstash before continuing
+11. this is very important: restart pi-hole and ensure filebeat is sending logs to logstash before proceeding
+11.1 You can verify this by:
+11.2 at your filebeat instance: "filebeat test output" - it should say "ok" on every step.
+12. again: the following steps will not work correctly if sending data to logstash here is not successfull!
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 12. import suitable "json/elk-hole *.json" for your version into kibana: management - saved objects - import
 13. delete any existing template matching our index name: DELETE /_template/logstash-syslog-dns*
 14. import the template: paste the content of "logstash-syslog-dns-index.template_ELK7.x.json" into kibanas dev tools console
-15. optionally reload kibanas field list
+14.1 click the green triangle in the upper right of the pasted content (first line). Output should be:
+{
+  "acknowledged" : true
+}
+15. optionally reload kibanas field list via: Management -> Index patterns -> type logstash-syslog-dns*
+15. click the curved arrows on the top left
 
 
 You should then be able to see your new dashboard and visualizations.
