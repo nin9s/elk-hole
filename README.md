@@ -77,5 +77,9 @@ it should say ```ok``` on every step.
   "acknowledged" : true 
 }
 ```
+24. as a precaution restart the whole elk stack
+```systemctl restart logstash systemctl
+restart elasticsearch
+systemctl restart kibana```
 
 You should then be able to see your new dashboard and visualizations.
