@@ -61,11 +61,11 @@ it should say ```ok``` on every step.
 
 13. create the index pattern:
 ```Management -> Index patterns -> Create index pattern```
-14. type ```logstash-syslog-dns``` - it shound find one index
+14. type ```logstash-syslog-dns*``` - it shound find one index
 15. click next step and select ```@timezone``` 
 16. Create index pattern
 17. Once the index is created, verify that 79 fields are listed
-18. click the curved arrows on the top left
+18. click the curved arrows on the top right
 19. import suitable ```json/elk-hole *.json``` for your version into kibana: ```management - saved objects - import```
 20. optionally select the correct index pattern: ```logstash-syslog-dns*```
 21. delete any existing template matching our index name: 
