@@ -54,24 +54,24 @@ This makes sure that /conf.d/20-dns-syslog.conf is beeing processed at the begin
 6. customize "LOGSTASHHOST:5141" to match your logstash hostname/ip
 7. restart filebeat
 9. copy 99-pihole-log-facility.conf to /etc/dnsmasq.d/
-11. this is very important: restart pi-hole and ensure filebeat is sending logs to logstash before proceeding
-11.1 You can verify this by:
-11.2 at your filebeat instance: "filebeat test output" - it should say "ok" on every step.
-12. again: the following steps will not work correctly if sending data to logstash here is not successfull!
+10. this is very important: restart pi-hole and ensure filebeat is sending logs to logstash before proceeding
+11. You can verify this by:
+12. at your filebeat instance: "filebeat test output" - it should say "ok" on every step.
+13. again: the following steps will not work correctly if sending data to logstash here is not successfull!
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 
-13. create the index pattern: Management -> Index patterns -> Create index pattern
-13.1 type logstash-syslog-dns - it shound find one index
-13.2 click next step and select @timezone 
-13.3 Create index pattern
-13.4 Once the index is created, verify that 79 fields are listed
-13.5 click the curved arrows on the top left
-14. import suitable "json/elk-hole *.json" for your version into kibana: management - saved objects - import
-14. optionally select the correct index pattern: logstash-syslog-dns*
-15. delete any existing template matching our index name: DELETE /_template/logstash-syslog-dns*
-16. import the template: paste the content of "logstash-syslog-dns-index.template_ELK7.x.json" into kibanas dev tools console
-16.1 click the green triangle in the upper right of the pasted content (first line). Output should be:
+14. create the index pattern: Management -> Index patterns -> Create index pattern
+15. type logstash-syslog-dns - it shound find one index
+16. click next step and select @timezone 
+17. Create index pattern
+18. Once the index is created, verify that 79 fields are listed
+19. click the curved arrows on the top left
+20. import suitable "json/elk-hole *.json" for your version into kibana: management - saved objects - import
+21. optionally select the correct index pattern: logstash-syslog-dns*
+22. delete any existing template matching our index name: DELETE /_template/logstash-syslog-dns*
+23. import the template: paste the content of "logstash-syslog-dns-index.template_ELK7.x.json" into kibanas dev tools console
+24. click the green triangle in the upper right of the pasted content (first line). Output should be:
 
 {
 
