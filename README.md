@@ -60,19 +60,24 @@ This makes sure that /conf.d/20-dns-syslog.conf is beeing processed at the begin
 12. again: the following steps will not work correctly if sending data to logstash here is not successfull!
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
-12. import suitable "json/elk-hole *.json" for your version into kibana: management - saved objects - import
-13. delete any existing template matching our index name: DELETE /_template/logstash-syslog-dns*
-14. import the template: paste the content of "logstash-syslog-dns-index.template_ELK7.x.json" into kibanas dev tools console
-14.1 click the green triangle in the upper right of the pasted content (first line). Output should be:
+
+13. create the index pattern: Management -> Index patterns -> Create index pattern
+13.1 type logstash-syslog-dns - it shound find one index
+13.2 click next step and select @timezone 
+13.3 Create index pattern
+13.4 Once the index is created, verify that 79 fields are listed
+13.5 click the curved arrows on the top left
+14. import suitable "json/elk-hole *.json" for your version into kibana: management - saved objects - import
+14. optionally select the correct index pattern: logstash-syslog-dns*
+15. delete any existing template matching our index name: DELETE /_template/logstash-syslog-dns*
+16. import the template: paste the content of "logstash-syslog-dns-index.template_ELK7.x.json" into kibanas dev tools console
+16.1 click the green triangle in the upper right of the pasted content (first line). Output should be:
 
 {
 
   "acknowledged" : true
   
 }
-
-15. optionally reload kibanas field list via: Management -> Index patterns -> type logstash-syslog-dns*
-15. click the curved arrows on the top left
 
 
 You should then be able to see your new dashboard and visualizations.
