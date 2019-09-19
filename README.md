@@ -32,8 +32,11 @@ The result will look like this:
 1.1 if you have other files in this folder make sure to properly edit the input/output/filter sections to avoid matching our filebeat dns logs in these files which may be processed earlier. For testing purposes you can name your conf files like so:
 
 /conf.d/20-dns-syslog.conf
+
 /conf.d/30-other1.conf
+
 /conf.d/40-other2.conf
+
 
 This makes sure that /conf.d/20-dns-syslog.conf is beeing processed at the beginning.
 
