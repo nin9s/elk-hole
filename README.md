@@ -78,8 +78,10 @@ it should say ```ok``` on every step.
 }
 ```
 24. as a precaution restart the whole elk stack
-```systemctl restart logstash 
+```
+systemctl restart logstash 
 systemctl restart elasticsearch
-systemctl restart kibana```
+systemctl restart kibana
+```
 
 You should then be able to see your new dashboard and visualizations.
