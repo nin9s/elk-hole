@@ -51,7 +51,7 @@ If you have other files in this folder make sure to properly edit the input/outp
 
 This makes sure that ```/conf.d/20-dns-syslog.conf``` is processed at the beginning.
 
-2. Using vim or nano, open/edit ```20-dns-syslog.conf```.  Scroll down to the Output section and change  ```ELASTICSEARCHHOST:PORT``` to match your environment.  If elasticsearch is running on the same system as logstash, then ```127.0.0.1:9200``` should work.  
+3. Using vim or nano, open/edit ```20-dns-syslog.conf```.  Scroll down to the Output section and change  ```ELASTICSEARCHHOST:PORT``` to match your environment.  If elasticsearch is running on the same system as logstash, then ```127.0.0.1:9200``` should work.  
 4. Restart logstash -  ```systemctl restart logstash.service```
 
 ### PI-HOLE Host
@@ -60,9 +60,9 @@ This makes sure that ```/conf.d/20-dns-syslog.conf``` is processed at the beginn
 6. Using vim or nano, open/edit the ```hosts:``` line and enter the IP address of the logstash system ```LOGSTASH IP:5141```
 7. Restart filebeat ```systemctl restart filebeat.service``` 
 8. *Important:* Restart pi-hole and ensure filebeat is sending logs to logstash before proceeding further. ```pihole restartdns```
-10. You can verify this filbert is running properly with the following two steps
-11. ```service filebeat status``` The output should show a couple key message.  Active: active (running) & Connection established 
-12. ```sudo filebeat test output``` should show:
+9. You can verify this filbert is running properly with the following two steps
+10. ```service filebeat status``` The output should show a couple key message.  Active: active (running) & Connection established 
+11. ```sudo filebeat test output``` should show:
 
 ```
 Logstash: <Logstash IP>:5141...
@@ -79,8 +79,8 @@ The following steps on the Kibana Host will not work correctly if sending data t
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
 
-13. Browse to the Kibana management interface using a web browser ```http://Kibana IP:5601```
-14. Go to Management --> Kibana --> Index Patterns and click Create the index pattern
+12. Browse to the Kibana management interface using a web browser ```http://Kibana IP:5601```
+13. Go to Management --> Kibana --> Index Patterns and click Create the index pattern
 14. Type ```logstash-syslog-dns*``` - It should find one index
 15. Click next step and select ```@timezone``` 
 16. Create index pattern
@@ -102,14 +102,14 @@ The following steps on the Kibana Host will not work correctly if sending data t
 
 *Note:* When you import these files, you could possibly see a message "Index Pattern Conflicts".  This is ok.  Below that message you may see one or two rows of data.  On each row click on the drop down menu and select "logstash-syslog-dns*"
 
-20. Browse to Dev Tools (wrench on left navigation)
-21. When Dev Tools comes up, there will be two columns when you are in the section with "Console" underlined.
-21. Delete any existing data in the left column
-22. From the downloaded files, locate ```logstash-syslog-dns-index.template_ELK7.x.json```
-23. Open that file in a text editor on your system
-24. Copy the entire contents of the file
-22. Paste the content of: ```logstash-syslog-dns-index.template_ELK7.x.json``` into kibanas dev tools console
-23. Click the green triangle in the upper right of the pasted content (first line). Output should be:
+22. Browse to Dev Tools (wrench on left navigation)
+23. When Dev Tools comes up, there will be two columns when you are in the section with "Console" underlined.
+24. Delete any existing data in the left column
+25. From the downloaded files, locate ```logstash-syslog-dns-index.template_ELK7.x.json```
+26. Open that file in a text editor on your system
+27. Copy the entire contents of the file
+28. Paste the content of: ```logstash-syslog-dns-index.template_ELK7.x.json``` into kibanas dev tools console
+29. Click the green triangle in the upper right of the pasted content (first line). Output should be:
 
 ```
 {
@@ -117,7 +117,7 @@ The following steps on the Kibana Host will not work correctly if sending data t
 }
 ```
 
-24. As a precaution restart the whole elk stack
+30. As a precaution restart the whole elk stack
 
 ```
 systemctl restart logstash.service 
