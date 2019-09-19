@@ -33,7 +33,7 @@ The result will look like this:
  
 ### LOGSTASH HOST 
 1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually ```/etc/logstash/```)
-1.1 if you have other files in this folder make sure to properly edit the input/output/filter sections to avoid matching our filebeat dns logs in these files which may be processed earlier. For testing purposes you can name your conf files like so:
+If you have other files in this folder make sure to properly edit the input/output/filter sections to avoid matching our filebeat dns logs in these files which may be processed earlier. For testing purposes you can name your conf files like so:
 
 ```
 /conf.d/20-dns-syslog.conf
@@ -44,7 +44,7 @@ The result will look like this:
 This makes sure that ```/conf.d/20-dns-syslog.conf``` is beeing processed at the beginning.
 
 2. customize ```ELASTICSEARCHHOST:PORT``` in the output section at the bottom of the file
-3. copy "dns" to:
+3. copy ```dns``` to:
 ```/etc/logstash/patterns/``` create the folder if it does not exist
 
 4. restart logstash
@@ -58,7 +58,7 @@ This makes sure that ```/conf.d/20-dns-syslog.conf``` is beeing processed at the
 10. You can verify this by:
 11. at your filebeat instance: 
 ```filebeat test output```
-it should say "ok" on every step.
+it should say ```ok``` on every step.
 12. again: the following steps will not work correctly if sending data to logstash here is not successfull!
 
 ### KIBANA HOST (CAN BE THE SAME AS LOGSTASH AND ELASTICSEARCH)
