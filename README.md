@@ -28,7 +28,7 @@ The result will look like this:
 # HOW TO USE 
  
 ### LOGSTASH HOST 
-1. copy "/conf.d/20-dns-syslog.conf" to your logstash folder (usually ```/etc/logstash/```)
+1. copy ```/conf.d/20-dns-syslog.conf``` to your logstash folder (usually ```/etc/logstash/```)
 If you have other files in this folder make sure to properly edit the input/output/filter sections to avoid matching our filebeat dns logs in these files which may be processed earlier. For testing purposes you can name your conf files like so:
 
 ```
