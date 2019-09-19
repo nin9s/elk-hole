@@ -42,6 +42,7 @@ This makes sure that /conf.d/20-dns-syslog.conf is beeing processed at the begin
 
 2. customize "ELASTICSEARCHHOST:PORT" in the output section at the bottom of the file
 3. copy "dns" to "/etc/logstash/patterns/"
+
 4. restart logstash
 
 ### PI-HOLE
@@ -59,9 +60,13 @@ This makes sure that /conf.d/20-dns-syslog.conf is beeing processed at the begin
 13. delete any existing template matching our index name: DELETE /_template/logstash-syslog-dns*
 14. import the template: paste the content of "logstash-syslog-dns-index.template_ELK7.x.json" into kibanas dev tools console
 14.1 click the green triangle in the upper right of the pasted content (first line). Output should be:
+
 {
+
   "acknowledged" : true
+  
 }
+
 15. optionally reload kibanas field list via: Management -> Index patterns -> type logstash-syslog-dns*
 15. click the curved arrows on the top left
 
