@@ -60,7 +60,7 @@ This makes sure that ```/conf.d/20-dns-syslog.conf``` is processed at the beginn
 6. Using vim or nano, open/edit the ```hosts:``` line and enter the IP address of the logstash system ```LOGSTASH IP:5141```
 7. Restart filebeat ```systemctl restart filebeat.service``` 
 8. *Important:* Restart pi-hole and ensure filebeat is sending logs to logstash before proceeding further. ```pihole restartdns```
-9. You can verify this filbert is running properly with the following two steps
+9. You can verify this filebeat is running properly with the following two steps
 10. ```service filebeat status``` The output should show a couple key message.  Active: active (running) & Connection established 
 11. ```sudo filebeat test output``` should show:
 
