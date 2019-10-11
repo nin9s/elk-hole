@@ -33,13 +33,13 @@ The result will look like this:
 ### LOGSTASH HOST 
 
 1. Download the files from Elk-hole repo 
-2. From the downloaded files, copy ```20-dns-syslog.conf``` and the ```/patterns``` folder to your logstash system.  Place them both in ```/etc/logstash/conf.d/```.  
+2. From the downloaded files, copy ```20-dns-syslog.conf``` to ```/etc/logstash/conf.d/``` and ```/patterns``` to  ```/etc/logstash/``` to your logstash system.  
 
 Your files should be like this:
 
 ```/etc/logstash/conf.d/20-dns-syslog.conf```
 
-```/etc/logstash/con.d/patterns/dns```
+```/etc/logstash/patterns/dns```
 
 If you have other files in this folder make sure to properly edit the input/output/filter sections to avoid matching our filebeat dns logs in these files which may be processed earlier. For testing purposes you can name your conf files like so:
 
