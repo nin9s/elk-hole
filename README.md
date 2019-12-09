@@ -88,7 +88,7 @@ The following steps on the Kibana Host will not work correctly if sending data t
 18. Click the curved arrows on the top right to refresh the index fields.  This is important because this will not automatically happen.
 19. Browse to Management --> Kibana --> Saved Objects
 20. Select Import (You will repeat this step)
-21. From the downloaded files, locate the ```json``` folder and import the following files depending on your software version (1.3.1 or 7.x)
+21. From the downloaded files, locate the ```json``` (or ```ndjson``` if you are using a recent version of elk) folder and import the following files depending on your software version (1.3.1 or 7.x)
 
 ```elk-hole - vis.json```
 
