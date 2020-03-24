@@ -82,7 +82,7 @@ The following steps on the Kibana Host will not work correctly if sending data t
 12. Browse to the Kibana management interface using a web browser ```http://Kibana IP:5601```
 13. Go to Management --> Kibana --> Index Patterns and click Create the index pattern
 14. Type ```logstash-syslog-dns*``` - It should find one index
-15. Click next step and select ```@timezone``` 
+15. Click next step and select ```@timestamp``` 
 16. Create index pattern
 17. Once the index is created, verify that 79 fields are listed
 18. Click the curved arrows on the top right to refresh the index fields.  This is important because this will not automatically happen.
