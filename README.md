@@ -56,7 +56,8 @@ This makes sure that ```/conf.d/20-dns-syslog.conf``` is processed at the beginn
 
 3.a Using vim or nano, open/edit ```20-dns-syslog.conf```. You may want to scroll down to the date section and change ```timezone``` to match your local time.
 
-3.b  Head to the output section and set ```ELASTICSEARCHHOST:PORT``` to match your environment.  If elasticsearch is running on the same system as logstash, then ```127.0.0.1:9200``` should work.  
+3.b  Head to the output section and set ```ELASTICSEARCHHOST:PORT``` to match your environment.  If elasticsearch is running on the same system as logstash, then ```127.0.0.1:9200``` should work. 
+
 4. Restart logstash -  ```systemctl restart logstash.service```
 
 ### PI-HOLE Host
