@@ -1,0 +1,337 @@
+[
+  {
+    "_id": "27d64600-33a3-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS requests vs piholed",
+      "visState": "{\"title\":\"DNS requests vs piholed\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"area\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":false,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"request.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":100,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"exists\",\"key\":\"request_from.keyword\",\"value\":\"exists\",\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"exists\":{\"field\":\"request_from.keyword\"},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      },
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "e7da3480-34f1-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS piholed total - pihole",
+      "visState": "{\"title\":\"DNS piholed total - pihole\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":20}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"negate\":false,\"disabled\":true,\"alias\":null,\"type\":\"phrase\",\"key\":\"tags.keyword\",\"value\":\"piholed\",\"params\":{\"query\":\"piholed\",\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"tags.keyword\":{\"query\":\"piholed\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"disabled\":true,\"alias\":null,\"type\":\"phrase\",\"key\":\"message\",\"value\":\"gravity.list\",\"params\":{\"query\":\"gravity.list\",\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[1].meta.index\"},\"query\":{\"match\":{\"message\":{\"query\":\"gravity.list\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"exists\",\"key\":\"blocked_domain\",\"value\":\"exists\",\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[2].meta.index\"},\"exists\":{\"field\":\"blocked_domain\"},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      },
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+        "type": "index-pattern",
+        "id": "59b18760-3133-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[1].meta.index",
+        "type": "index-pattern",
+        "id": "59b18760-3133-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[2].meta.index",
+        "type": "index-pattern",
+        "id": "59b18760-3133-11e8-beb4-d7353bd14360"
+      }
+    ]
+  },
+  {
+    "_id": "bd5cd320-34f1-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS requests total - pihole",
+      "visState": "{\"title\":\"DNS requests total - pihole\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":21}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"DNS Requests\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"negate\":true,\"disabled\":true,\"alias\":null,\"type\":\"phrase\",\"key\":\"query_type\",\"value\":\"PTR\",\"params\":{\"query\":\"PTR\",\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"query_type\":{\"query\":\"PTR\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"tags.keyword\",\"value\":\"request and query type\",\"params\":{\"query\":\"request and query type\",\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[1].meta.index\"},\"query\":{\"match\":{\"tags.keyword\":{\"query\":\"request and query type\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      },
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      },
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[1].meta.index",
+        "type": "index-pattern",
+        "id": "59b18760-3133-11e8-beb4-d7353bd14360"
+      }
+    ]
+  },
+  {
+    "_id": "91cada30-5e82-11e8-81db-f1525a738f45",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS query types - pihole",
+      "visState": "{\"title\":\"DNS query types - pihole\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"query_type.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "381275b0-34bc-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "Requests vs piholed - pihole",
+      "visState": "{\"title\":\"Requests vs piholed - pihole\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"b0e4bf30-34bb-11e8-806f-b37e16272205\",\"color\":\"rgba(255,0,0,1)\",\"split_mode\":\"filter\",\"metrics\":[{\"id\":\"b0e4bf31-34bb-11e8-806f-b37e16272205\",\"type\":\"count\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"3\",\"point_size\":\"0\",\"fill\":\"1\",\"stacked\":\"none\",\"terms_field\":\"tags.keyword\",\"split_filters\":[{\"filter\":\"test\",\"label\":\"test 1\",\"color\":\"#68BC00\",\"id\":\"035358d0-34bc-11e8-806f-b37e16272205\"}],\"terms_order_by\":\"_count\",\"label\":\"Piholed Count\",\"filter\":\"tags:\\\"piholed\\\"\",\"steps\":0,\"split_color_mode\":\"gradient\"},{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"filter\",\"metrics\":[{\"id\":\"a5cd5cd0-34be-11e8-a36f-6fd9911e50af\",\"type\":\"count\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":\"3\",\"point_size\":\"0\",\"fill\":\"0.5\",\"stacked\":\"none\",\"terms_field\":\"query_type.keyword\",\"terms_order_by\":\"_count\",\"terms_size\":\"10\",\"filter\":\"tags:\\\"request and query type\\\"\",\"override_index_pattern\":0,\"split_color_mode\":\"gradient\",\"label\":\"Request Count\",\"offset_time\":\"\",\"series_drop_last_bucket\":1}],\"time_field\":\"@timestamp\",\"index_pattern\":\"*dns*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"background_color_rules\":[{\"id\":\"76bd8260-34bb-11e8-806f-b37e16272205\"}],\"bar_color_rules\":[{\"id\":\"7892dea0-34bb-11e8-806f-b37e16272205\"}],\"gauge_color_rules\":[{\"id\":\"79668250-34bb-11e8-806f-b37e16272205\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\",\"annotations\":[{\"fields\":\"\",\"template\":\"\",\"index_pattern\":\"\",\"query_string\":\"\",\"id\":\"b09dc6f0-34c2-11e8-a36f-6fd9911e50af\",\"color\":\"#F00\",\"time_field\":\"@timestamp\",\"icon\":\"fa-tag\",\"ignore_global_filters\":1,\"ignore_panel_filters\":1}],\"ignore_global_filter\":0,\"axis_scale\":\"normal\",\"legend_position\":\"bottom\",\"background_color\":\"rgba(255,255,255,1)\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": []
+  },
+  {
+    "_id": "88d55340-338c-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS request/respone type - pihole",
+      "visState": "{\"title\":\"DNS request/respone type - pihole\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":15,\"filter\":false},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"legendPosition\":\"right\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\",\"defaultYExtents\":true},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}],\"orderBucketsBySum\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source_fqdn.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"tags.keyword\",\"size\":500,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"exclude\":\"beats_input_codec_plain_applied|5141|pihole|_geoip_lookup_failure\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "8c6a0b10-34f2-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS top piholed domains - pihole",
+      "visState": "{\"title\":\"DNS top piholed domains - pihole\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\",\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"blocked_domain.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Top Piholed Domains\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "c60b2a70-339e-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS query type/source host - pihole",
+      "visState": "{\"title\":\"DNS query type/source host - pihole\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":15},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"source_fqdn.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"query_type.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "076c70c0-338e-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS requests per client - pihole",
+      "visState": "{\"title\":\"DNS requests per client - pihole\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showTotal\":true,\"sort\":{\"columnIndex\":null,\"direction\":null},\"totalFunc\":\"sum\",\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Queries\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"source_fqdn.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Client IP\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"meta\":{\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"tags.keyword\",\"value\":\"request and query type\",\"params\":{\"query\":\"request and query type\",\"type\":\"phrase\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"tags.keyword\":{\"query\":\"request and query type\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      },
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "25c8a840-27b2-11e9-8e51-330d470c740b",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS top domains - pihole",
+      "visState": "{\"title\":\"DNS top domains - pihole\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\",\"showMetricsAtAllLevels\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Count\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"domain_request.keyword\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"exclude\":\"\",\"customLabel\":\"Top Domains\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "e611adc0-a203-11e8-8e9e-1d0e979ee6d4",
+    "_type": "visualization",
+    "_source": {
+      "title": "piholed percent - pihole",
+      "visState": "{\"title\":\"piholed percent - pihole\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"gauge\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"everything\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"filter_ratio\",\"numerator\":\"tags:\\\"piholed\\\"\",\"denominator\":\"tags:\\\"request and query type\\\"\",\"metric_agg\":\"count\"},{\"sigma\":\"\",\"id\":\"ef9f03c0-7c04-11e9-b96e-8bf05a5f3904\",\"type\":\"avg_bucket\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"}],\"seperate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"percent\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"value_template\":\"\",\"filter\":\"\",\"split_filters\":[{\"filter\":\"\",\"label\":\"_exists_: source\\\\* _exists_: blocked\\\\*\",\"color\":\"#68BC00\",\"id\":\"a1999690-7c86-11e9-858f-63d26332fe87\"}],\"label\":\"\"}],\"time_field\":\"@timestamp\",\"index_pattern\":\"*dns*\",\"interval\":\"auto\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"show_legend\":1,\"show_grid\":1,\"gauge_color_rules\":[{\"id\":\"14b76370-a201-11e8-a2be-75195e55158c\"}],\"gauge_width\":10,\"gauge_inner_width\":10,\"gauge_style\":\"half\",\"bar_color_rules\":[{\"id\":\"c116e410-a201-11e8-a2be-75195e55158c\"}],\"background_color_rules\":[{\"id\":\"6fa17de0-a209-11e8-a2be-75195e55158c\"}],\"annotations\":[],\"axis_scale\":\"normal\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": []
+  },
+  {
+    "_id": "27624920-3390-11e8-beb4-d7353bd14360",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS forward destinations - pihole",
+      "visState": "{\"title\":\"DNS forward destinations - pihole\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"beat.hostname.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"dns_forward_to.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  },
+  {
+    "_id": "0858a2c0-643d-11e9-b607-6710a00e4c3e",
+    "_type": "visualization",
+    "_source": {
+      "title": "DNS heatmap - pihole",
+      "visState": "{\"title\":\"DNS heatmap - pihole\",\"type\":\"tile_map\",\"params\":{\"colorSchema\":\"Yellow to Red\",\"mapType\":\"Scaled Circle Markers\",\"isDesaturated\":true,\"addTooltip\":true,\"heatClusterSize\":1.5,\"legendPosition\":\"bottomright\",\"mapZoom\":2,\"mapCenter\":[0,0],\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true},\"selectedTmsLayer\":{\"id\":\"road_map\",\"url\":\"https://tiles.maps.elastic.co/v2/default/{z}/{x}/{y}.png?elastic_tile_service_tos=agree&my_app_name=kibana&my_app_version=6.5.0&license=d154e558-dd1b-48cc-aebe-5d0912811c2d\",\"minZoom\":0,\"maxZoom\":18,\"attribution\":\"<p>&#169; <a href=\\\"http://www.openstreetmap.org/copyright\\\">OpenStreetMap</a> contributors | <a href=\\\"https://openmaptiles.org/\\\">OpenMapTiles</a> | <a href=\\\"https://www.maptiler.com/\\\">MapTiler</a> | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\",\"subdomains\":[]}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"geohash_grid\",\"schema\":\"segment\",\"params\":{\"field\":\"geoip.location\",\"autoPrecision\":true,\"isFilteredByCollar\":true,\"useGeocentroid\":true,\"mapZoom\":2,\"mapCenter\":{\"lon\":53.26171875,\"lat\":3.337953961416485},\"precision\":2}}]}",
+      "uiStateJSON": "{\"mapZoom\":3,\"mapCenter\":[34.08906131584996,-5.185546875000001]}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+      }
+    },
+    "_migrationVersion": {
+      "visualization": "7.0.1"
+    },
+    "_references": [
+      {
+        "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+        "type": "index-pattern",
+        "id": "55140490-2411-11e9-8e51-330d470c740b"
+      }
+    ]
+  }
+]

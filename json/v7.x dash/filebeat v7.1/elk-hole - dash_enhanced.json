@@ -1,0 +1,88 @@
+[
+  {
+    "_id": "fb953870-339e-11e8-beb4-d7353bd14360",
+    "_type": "dashboard",
+    "_source": {
+      "title": "DNS - pihole",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}},\"gridData\":{\"x\":0,\"y\":39,\"w\":14,\"h\":14,\"i\":\"1\"},\"panelIndex\":\"1\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"x\":24,\"y\":39,\"w\":15,\"h\":14,\"i\":\"2\"},\"panelIndex\":\"2\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_1\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":23,\"w\":20,\"h\":16,\"i\":\"3\"},\"panelIndex\":\"3\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_2\"},{\"gridData\":{\"x\":20,\"y\":23,\"w\":9,\"h\":16,\"i\":\"4\"},\"panelIndex\":\"4\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_3\"},{\"gridData\":{\"x\":0,\"y\":12,\"w\":29,\"h\":11,\"i\":\"6\"},\"panelIndex\":\"6\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_4\"},{\"gridData\":{\"x\":19,\"y\":47,\"w\":5,\"h\":6,\"i\":\"7\"},\"panelIndex\":\"7\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_5\"},{\"gridData\":{\"x\":14,\"y\":47,\"w\":5,\"h\":6,\"i\":\"8\"},\"panelIndex\":\"8\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_6\"},{\"gridData\":{\"x\":29,\"y\":23,\"w\":10,\"h\":16,\"i\":\"9\"},\"panelIndex\":\"9\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_7\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"x\":39,\"y\":39,\"w\":9,\"h\":14,\"i\":\"10\"},\"panelIndex\":\"10\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_8\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":14,\"y\":39,\"w\":10,\"h\":8,\"i\":\"11\"},\"panelIndex\":\"11\",\"version\":\"6.3.2\",\"panelRefName\":\"panel_9\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":39,\"y\":23,\"w\":9,\"h\":16,\"i\":\"12\"},\"panelIndex\":\"12\",\"version\":\"6.5.0\",\"panelRefName\":\"panel_10\"},{\"embeddableConfig\":{\"mapCenter\":[40.44694705960048,-47.63671875000001],\"mapZoom\":2},\"gridData\":{\"x\":29,\"y\":0,\"w\":19,\"h\":23,\"i\":\"13\"},\"panelIndex\":\"13\",\"version\":\"6.5.0\",\"panelRefName\":\"panel_11\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":29,\"h\":12,\"i\":\"14\"},\"panelIndex\":\"14\",\"version\":\"7.1.1\",\"panelRefName\":\"panel_12\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_migrationVersion": {
+      "dashboard": "7.0.0"
+    },
+    "_references": [
+      {
+        "name": "panel_0",
+        "type": "visualization",
+        "id": "27624920-3390-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_1",
+        "type": "visualization",
+        "id": "c60b2a70-339e-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_2",
+        "type": "visualization",
+        "id": "88d55340-338c-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_3",
+        "type": "visualization",
+        "id": "076c70c0-338e-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_4",
+        "type": "visualization",
+        "id": "381275b0-34bc-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_5",
+        "type": "visualization",
+        "id": "e7da3480-34f1-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_6",
+        "type": "visualization",
+        "id": "bd5cd320-34f1-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_7",
+        "type": "visualization",
+        "id": "8c6a0b10-34f2-11e8-beb4-d7353bd14360"
+      },
+      {
+        "name": "panel_8",
+        "type": "visualization",
+        "id": "91cada30-5e82-11e8-81db-f1525a738f45"
+      },
+      {
+        "name": "panel_9",
+        "type": "visualization",
+        "id": "e611adc0-a203-11e8-8e9e-1d0e979ee6d4"
+      },
+      {
+        "name": "panel_10",
+        "type": "visualization",
+        "id": "25c8a840-27b2-11e9-8e51-330d470c740b"
+      },
+      {
+        "name": "panel_11",
+        "type": "visualization",
+        "id": "0858a2c0-643d-11e9-b607-6710a00e4c3e"
+      },
+      {
+        "name": "panel_12",
+        "type": "visualization",
+        "id": "250ac110-be00-11e9-af9d-a5367fba53de"
+      }
+    ]
+  }
+]

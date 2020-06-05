@@ -1,10 +1,14 @@
+# created by n9nes												#
+# feel free to star the rep - https://github.com/nin9s/elk-hole	#
+#################################################################
+
 filebeat:
  prospectors:
    -
      paths:
         - /var/log/pihole.log
      
-     # filebeat 6.6.0 above: change input_type to type
+     # if "input_type" is not working change it to "type"
      input_type: log
  registry_file: /var/lib/filebeat/registry
  
@@ -14,7 +18,7 @@ output:
    hosts: ["127.0.0.1:5141"]
    
 shipper:
-   
+  name: elk-hole
 logging:
  files:
    rotateeverybytes: 10485760
