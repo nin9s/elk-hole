@@ -3,3 +3,4 @@ NODATA NODATA-[[:word:]]+
 SRV _+.+\S
 FQDN \b(?:[\w-][\w-]{0,62})(?:\.(?:[\w-][\w-]{0,62}))*(\.?|\b)
 DNSMASQPREFIX %{SYSLOGTIMESTAMP:date} %{SYSLOGPROG}: %{INT:logrow} %{IP:source_host}\/%{POSINT:source_port}
+URI %{URIPROTO}:(//)?(?:%{URIHOST})?(?:%{URIPATH})?
