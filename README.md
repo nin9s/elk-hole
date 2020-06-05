@@ -130,6 +130,6 @@ systemctl restart logstash.service
 systemctl restart elasticsearch.service
 systemctl restart kibana.service
 ```
-*Important:* Please also re-index after setting everything up and also refresh kibanas field index
+*Important:* Please also re-index after setting everything up and also refresh kibanas index field list
 
 You should then be able to see your new dashboard and visualizations.
