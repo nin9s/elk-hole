@@ -11,10 +11,10 @@ elk-hole provides the relevant files and configuration to easily visualize pi-ho
 
 ### Requirements:
 ## Working Installation of:
-1. [logstash](https://www.elastic.co/products/logstash) (currently tested up to version "7.8")
-2. [elasticsearch](https://www.elastic.co/products/elasticsearch)(currently tested up to version with "7.8")
-3. [kibana](https://www.elastic.co/products/kibana)(currently tested up to version "7.8")
-4. [filebeat](https://www.elastic.co/products/beats/filebeat) on pi-hole (tested with "1.3.1", "7.1.1" & "7.8")
+1. [logstash](https://www.elastic.co/products/logstash) (currently tested up to version "7.9")
+2. [elasticsearch](https://www.elastic.co/products/elasticsearch)(currently tested up to version with "7.9")
+3. [kibana](https://www.elastic.co/products/kibana)(currently tested up to version "7.9")
+4. [filebeat](https://www.elastic.co/products/beats/filebeat) on pi-hole (tested with "1.3.1", "7.1.1" & "7.9")
 
 
 For official installation guides of the elk stack - refer to [Elastic](https://www.elastic.co/ for details) 
