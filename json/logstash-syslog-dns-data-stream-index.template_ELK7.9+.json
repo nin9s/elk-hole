@@ -1,4 +1,4 @@
-  PUT _index_template/dns
+PUT _index_template/dns
 {
   "version": 1,
   "priority": 200,
@@ -11,32 +11,30 @@
       }
     },
     "mappings": {
+      "_routing": {
+        "required": false
+      },
+      "numeric_detection": false,
+      "dynamic_date_formats": [
+        "strict_date_optional_time",
+        "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"
+      ],
       "_source": {
         "excludes": [],
         "includes": [],
         "enabled": true
       },
-      "_routing": {
-        "required": false
-      },
       "dynamic": true,
-      "numeric_detection": false,
       "date_detection": true,
-      "dynamic_date_formats": [
-        "strict_date_optional_time",
-        "yyyy/MM/dd HH:mm:ss Z||yyyy/MM/dd Z"
-      ],
       "properties": {
-        "@timestamp": {
+        "date": {
+          "format": "MMM  d HH:mm:ss||MMM dd HH:mm:ss",
           "type": "date"
-        },
-        "@version": {
-          "type": "keyword"
         },
         "agent": {
           "type": "object",
           "properties": {
-            "ephemeral_id": {
+            "hostname": {
               "norms": false,
               "type": "text",
               "fields": {
@@ -46,7 +44,7 @@
                 }
               }
             },
-            "hostname": {
+            "name": {
               "norms": false,
               "type": "text",
               "fields": {
@@ -66,7 +64,7 @@
                 }
               }
             },
-            "name": {
+            "ephemeral_id": {
               "norms": false,
               "type": "text",
               "fields": {
@@ -97,204 +95,6 @@
               }
             }
           }
-        },
-        "blocked_domain": {
-          "norms": false,
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        },
-        "date": {
-          "format": "MMM  d HH:mm:ss||MMM dd HH:mm:ss",
-          "type": "date"
-        },
-        "dns_forward_to": {
-          "type": "ip"
-        },
-        "domain_request": {
-          "norms": false,
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        },
-        "domain_response": {
-          "norms": false,
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        },
-        "ecs": {
-          "type": "object",
-          "properties": {
-            "version": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            }
-          }
-        },
-        "geoip": {
-          "type": "object",
-          "properties": {
-            "city_name": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "continent_code": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "country_code2": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "country_code3": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "country_name": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "dma_code": {
-              "type": "long"
-            },
-            "ip": {
-              "type": "ip"
-            },
-            "latitude": {
-              "type": "half_float"
-            },
-            "location": {
-              "type": "geo_point"
-            },
-            "longitude": {
-              "type": "half_float"
-            },
-            "postal_code": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "region_code": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "region_name": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            },
-            "timezone": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            }
-          }
-        },
-        "host": {
-          "type": "object",
-          "properties": {
-            "name": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            }
-          }
-        },
-        "input": {
-          "type": "object",
-          "properties": {
-            "type": {
-              "norms": false,
-              "type": "text",
-              "fields": {
-                "keyword": {
-                  "ignore_above": 256,
-                  "type": "keyword"
-                }
-              }
-            }
-          }
-        },
-        "ip_request": {
-          "type": "ip"
-        },
-        "ip_response": {
-          "type": "ip"
         },
         "log": {
           "type": "object",
@@ -319,60 +119,22 @@
             }
           }
         },
-        "logrow": {
-          "type": "integer"
-        },
-        "message": {
+        "blocked_domain": {
           "norms": false,
-          "type": "text"
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "ignore_above": 256,
+              "type": "keyword"
+            }
+          }
         },
         "pid": {
           "type": "integer"
         },
-        "pihole": {
-          "type": "ip"
-        },
         "program": {
           "norms": false,
           "type": "text",
-          "fields": {
-            "keyword": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        },
-        "query_type": {
-          "norms": false,
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        },
-        "request_from": {
-          "type": "ip"
-        },
-        "source_fqdn": {
-          "norms": false,
-          "type": "text",
-          "fields": {
-            "keyword": {
-              "ignore_above": 256,
-              "type": "keyword"
-            }
-          }
-        },
-        "source_host": {
-          "type": "ip"
-        },
-        "source_port": {
-          "type": "integer"
-        },
-        "tags": {
-          "type": "keyword",
           "fields": {
             "keyword": {
               "ignore_above": 256,
@@ -389,13 +151,254 @@
               "type": "keyword"
             }
           }
+        },
+        "logrow": {
+          "type": "integer"
+        },
+        "ip_response": {
+          "type": "ip"
+        },
+        "ecs": {
+          "type": "object",
+          "properties": {
+            "version": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "source_fqdn": {
+          "norms": false,
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "ignore_above": 256,
+              "type": "keyword"
+            }
+          }
+        },
+        "source_port": {
+          "type": "integer"
+        },
+        "@version": {
+          "type": "keyword"
+        },
+        "host": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "ip_request": {
+          "type": "ip"
+        },
+        "dns_forward_to": {
+          "type": "ip"
+        },
+        "geoip": {
+          "type": "object",
+          "properties": {
+            "timezone": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "ip": {
+              "type": "ip"
+            },
+            "latitude": {
+              "type": "half_float"
+            },
+            "continent_code": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "city_name": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "country_code2": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "country_name": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "dma_code": {
+              "type": "long"
+            },
+            "country_code3": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "location": {
+              "type": "geo_point"
+            },
+            "region_name": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "postal_code": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            },
+            "longitude": {
+              "type": "half_float"
+            },
+            "region_code": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "source_host": {
+          "type": "ip"
+        },
+        "query_type": {
+          "norms": false,
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "ignore_above": 256,
+              "type": "keyword"
+            }
+          }
+        },
+        "message": {
+          "norms": false,
+          "type": "text"
+        },
+        "domain_response": {
+          "norms": false,
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "ignore_above": 256,
+              "type": "keyword"
+            }
+          }
+        },
+        "pihole": {
+          "type": "ip"
+        },
+        "tags": {
+          "type": "keyword",
+          "fields": {
+            "keyword": {
+              "ignore_above": 256,
+              "type": "keyword"
+            }
+          }
+        },
+        "input": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "norms": false,
+              "type": "text",
+              "fields": {
+                "keyword": {
+                  "ignore_above": 256,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "request_from": {
+          "type": "ip"
+        },
+        "@timestamp": {
+          "type": "date"
+        },
+        "domain_request": {
+          "norms": false,
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "ignore_above": 256,
+              "type": "keyword"
+            }
+          }
         }
       }
+    },
+    "aliases": {
+      "syslog-dns": {}
     }
   },
   "index_patterns": [
     "logstash-syslog-dns*"
   ],
-  "data_stream": {}
+  "data_stream": {},
+  "composed_of": []
 }
-
