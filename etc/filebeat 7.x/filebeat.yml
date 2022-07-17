@@ -10,7 +10,6 @@ filebeat.inputs:
   enabled: true
   paths:
     - /var/log/pihole.log
-#    - /var/log/pihole/pihole.log
 
 name: elk-hole
 
